@@ -8,6 +8,14 @@ class TransaksiSppDetail extends Model
 {
     protected $table = "transaksi_spp_detail";
 
+    protected $fillable = [
+        "transaksi_spp_id",
+        "siswa_id",
+        "bulan",
+        "tahun",
+        "nominal_spp"
+    ];
+
     public function transaksi() {
         return $this->belongsTo(TransaksiSpp::class);
     }
