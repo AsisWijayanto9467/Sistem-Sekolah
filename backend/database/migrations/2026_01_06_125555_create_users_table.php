@@ -16,8 +16,6 @@ return new class extends Migration
             $table->foreignId("siswa_id")->nullable()->constrained('siswa')->nullOnDelete();
             $table->foreignId("guru_id")->nullable()->constrained('guru')->nullOnDelete();
             $table->string('username');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string("status");
             $table->rememberToken();
