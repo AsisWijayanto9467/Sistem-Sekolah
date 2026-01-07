@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,12 +15,12 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        $request->validate([
+        $credentials = $request->validate([
             "username" => "required|string",
             "password" => "required"
         ]);
 
-        if(!Auth::attempt($request->only("username", "password"))) {
+        if(!Auth::guard("web")->attempt($credentials)) {
             throw ValidationException::withMessages([
                 "username" => ["username atau password anada salah"]
             ]);
