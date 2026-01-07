@@ -24,7 +24,7 @@ class KelasSeeder extends Seeder
             ],[
                 "kode_kelas" => "893284",
                 "nama_kelas" => "XIOA",
-                "wali_kelas_id" => 2,
+                "wali_kelas_id" => 3,
                 "jumlah_pembayaran" => "150000",
                 "created_at" => now(),
                 "updated_at" => now(),
