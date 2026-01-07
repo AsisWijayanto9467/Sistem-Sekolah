@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\GuruController;
 use App\Http\Controllers\API\JurusanController;
 use App\Http\Controllers\API\KelasController;
+use App\Http\Controllers\API\MapelController;
 use App\Http\Controllers\API\TahunAkademikController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,13 @@ Route::middleware("auth:sanctum")->group(function() {
     Route::get("/kelas/{id}", [KelasController::class, "show"]);
     Route::put("/kelas/{id}", [KelasController::class, "update"]);
     Route::delete("/kelas/{id}", [KelasController::class, "destroy"]);
+
+    // Mapel
+    Route::get("/mapel", [MapelController::class, "index"]);
+    Route::post("/mapel", [MapelController::class, "store"]);
+    Route::get("/mapel/{id}", [MapelController::class, "show"]);
+    Route::put("/mapel/{id}", [MapelController::class, "update"]);
+    Route::delete("/mapel/{id}", [MapelController::class, "destroy"]);
 
     Route::post("/logout", [AuthController::class, "logout"]);
 });

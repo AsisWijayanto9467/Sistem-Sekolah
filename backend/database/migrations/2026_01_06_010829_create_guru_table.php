@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("nip", 30)->unique();
             $table->string("kode_guru", 20)->unique();
-            $table->string("nama lengkap");
+            $table->string("nama_lengkap");
             $table->string("tempat_lahir");
             $table->date("tanggal_lahir");
             $table->enum("jenis_kelamin", ['laki-laki', 'perempuan']);

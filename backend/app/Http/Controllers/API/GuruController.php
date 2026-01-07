@@ -53,7 +53,7 @@ class GuruController extends Controller
             "mulai_tugas" => "required",
 
             "username" => "required|unique:users,username",
-            "password" => "required|min:6",
+            "password" => "required",
         ]);
 
         $guru = DB::transaction(function () use($request) {
@@ -95,14 +95,6 @@ class GuruController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
         $guru = Guru::with("user")->find($id);
 
         if(!$guru) {
@@ -117,6 +109,14 @@ class GuruController extends Controller
             "message" => "Berhasil mengambil data",
             "guru" => $guru
         ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
     }
 
     /**

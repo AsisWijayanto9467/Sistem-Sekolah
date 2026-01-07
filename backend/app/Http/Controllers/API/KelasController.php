@@ -62,7 +62,7 @@ class KelasController extends Controller
      */
     public function show(string $id)
     {
-        $kelas = Kelas::with("WaliKelas")->get($id);
+        $kelas = Kelas::with("WaliKelas")->find($id);
 
         if(!$kelas) {
             return response()->json([
@@ -91,7 +91,7 @@ class KelasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $kelas = Kelas::with("WaliKelas")->get($id);
+        $kelas = Kelas::with("WaliKelas")->find($id);
 
         if(!$kelas) {
             return response()->json([
@@ -121,7 +121,7 @@ class KelasController extends Controller
      */
     public function destroy(string $id)
     {
-        $kelas = Kelas::with("WaliKelas")->get($id);
+        $kelas = Kelas::with("WaliKelas")->find($id);
 
         if(!$kelas) {
             return response()->json([
